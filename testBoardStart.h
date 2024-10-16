@@ -23,9 +23,6 @@ public:
    void run()
    {
       // construct
-      construct_dummyBoard();
-      construct_emptyBoard();
-
       construct_default();
 
       // move
@@ -58,7 +55,7 @@ public:
       whiteTurn_second();
       whiteTurn_middleWhite();
       whiteTurn_middleBlack();
-      
+
       // fetch and get
       fetch_a1();
       fetch_h8();
@@ -72,15 +69,12 @@ public:
 private:
    
    void createDummyBoard(Board & board);
-
    void construct_default();
-   void construct_dummyBoard();
-   void construct_emptyBoard();
    void getCurrentMove_initial();
    void getCurrentMove_second();
    void getCurrentMove_middleWhite();
    void getCurrentMove_middleBlack();
-
+   
    void whiteTurn_initial();
    void whiteTurn_second();
    void whiteTurn_middleWhite();
@@ -110,5 +104,6 @@ private:
    void set_a1();
    void set_h8();
    void set_a8();
+
 };
 
