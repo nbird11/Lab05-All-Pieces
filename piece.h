@@ -72,9 +72,11 @@ public:
    virtual void setLastMove(int currentMove);
 
    // overwritten by the various pieces
-   virtual PieceType getType()                                    const = 0;
-   virtual void display(ogstream * pgout)                         const = 0;
-   virtual void getMoves(set <Move> & moves, const Board & board) const;
+   virtual PieceType getType()            const = 0;
+   virtual void display(ogstream * pgout) const = 0;
+   //virtual void getMovesSlide(set <Move>& moves, const Board& board)   const;
+   //virtual void getMovesNoSlide(set <Move>& moves, const Board& board) const;
+   virtual void getMoves(set <Move> & moves, const Board & board)      const;
 
 protected:
 

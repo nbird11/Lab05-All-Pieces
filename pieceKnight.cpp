@@ -24,17 +24,17 @@ void Knight::display(ogstream* pgout) const
 /**********************************************
  * KNIGHT : GET POSITIONS
  *********************************************/
-void Knight::getMoves(set <Move>& moves, const Board& board) const
+void Knight::getMoves(set <Move>& possible, const Board& board) const
 {
    int row = position.getRow();
    int col = position.getCol();
-   Position move[8] =
+   Position moves[8] =
    {
       {Position(col - 1, row + 2)}, 
       {Position(col + 1, row + 2)},
       {Position(col - 2, row + 1)},                    
       {Position(col + 2, row + 1)},
-      {Position(col - 2, row - 1)},                    
+      {Position(col - 2, row - 1)},
       {Position(col + 2, row - 1)},
       {Position(col - 1, row - 2)},
       {Position(col + 1, row - 2)}
@@ -43,13 +43,10 @@ void Knight::getMoves(set <Move>& moves, const Board& board) const
    int c;
    for (int i = 0; i < 8; i++)
    {
-      r = move[i].getRow();
-      c = move[i].getCol();
-      if (!(0 <= r && r <= 7 && 0 <= c && c <= 7))
-         continue;
-      if ((fWhite && !board[Position(c, r)].isWhite()) || board[Position(c, r)].getType() == SPACE)
-         moves.insert(Move(position, Position(c, r), PieceType::INVALID, board[Position(c, r)].getType(), Move::MoveType::MOVE, isWhite()));
-      //if (fWhite && board[Position(c, r)].isWhite())
-      //   moves.insert(Move(position, Position(c, r), PieceType::INVALID, board[Position(c, r)].getType(), Move::MoveType::MOVE, isWhite()));
+      r = moves[i].getRow();
+      c = moves[i].getCol();
+      if (0 <= r && r <= 7 && 0 <= c && c <= 7)
+         if ((fWhite && !board[moves[i]].isWhite()) || board[moves[i]].getType() == SPACE)
+            possible.insert(Move(position, moves[i], PieceType::INVALID, board[moves[i]].getType(), Move::MoveType::MOVE, isWhite()));
    }
 }

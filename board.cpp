@@ -47,16 +47,6 @@ void Board::reset(bool fFree)
    board[6][7] = new Knight(6, 7, true);
 }
 
-//Board::Board()
-//{
-//   numMoves = 0;
-//   for (int col = 0; col < 8; col++)
-//   {
-//      for (int row = 0; row < 8; row++)
-//         board[col][row] = nullptr;
-//   }
-//}
-
 // we really REALLY need to delete this.
 Space space(0, 0);
 
@@ -67,12 +57,10 @@ Space space(0, 0);
 const Piece& Board::operator [] (const Position& pos) const
 {
    return *(board[pos.getCol()][pos.getRow()]);
-   //return space;
 }
 Piece& Board::operator [] (const Position& pos)
 {
    return *(board[pos.getCol()][pos.getRow()]);
-   //return space;
 }
 
 /***********************************************
