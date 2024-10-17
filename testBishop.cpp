@@ -174,10 +174,10 @@ void TestBishop::getMoves_slideToBlock()
  **************************************/
 void TestBishop::getMoves_slideToCapture()
 {
-             // SETUP
+   // SETUP
    BoardEmpty board;
-   Bishop bishop(7, 7, false /*white*/);
-   bishop.fWhite = false;  // black
+   Bishop bishop(7, 7, false /*isWhite*/);
+   bishop.fWhite = true;
    bishop.position.set(2, 1);
    board.board[2][1] = &bishop;
    Black black1(PAWN);
@@ -221,8 +221,8 @@ void TestBishop::getMoves_slideToCapture()
  **************************************/
 void TestBishop::getType()
 {
-      // SETUP
-   Bishop bishop(7, 7, false /*black*/);
+   // SETUP
+   Bishop bishop(7, 7, false /*isWhite*/);
    bishop.fWhite = true;
    bishop.position.set(3, 4);
 

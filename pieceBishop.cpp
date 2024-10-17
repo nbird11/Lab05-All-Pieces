@@ -1,16 +1,21 @@
-#include "pieceBishop.h"
-#include "uiDraw.h"    // for draw*()
+/***********************************************************************
+ * Source File:
+ *    BISHOP
+ * Author:
+ *    <your name here>
+ * Summary:
+ *    The Bishop class
+ ************************************************************************/
 
-struct CR {
-   int col;
-   int row;
-};
+#include "pieceBishop.h"
+#include "board.h"
+#include "uiDraw.h"    // for draw*()
 
 void Bishop::getMoves(set <Move>& possible, const Board& board) const
 {
    int row = position.getRow();
    int col = position.getCol();
-   CR moves[4] =
+   RelativePos moves[4] =
    {
       {-1, 1}, {1, 1},
       {-1, -1}, {1, -1}
@@ -22,6 +27,7 @@ void Bishop::getMoves(set <Move>& possible, const Board& board) const
       r = row + moves[i].row;
       c = col + moves[i].col;
       Position newPos(c, r);
+
       while (r >= 0 && r < 8 && c >= 0 && c < 8 &&
              board[newPos].getType() == SPACE)
       {
@@ -30,7 +36,7 @@ void Bishop::getMoves(set <Move>& possible, const Board& board) const
          c += moves[i].col;
          newPos = Position(c, r);
       }
-      if (fWhite && board[newPos].isWhite())
+      if (fWhite && !board[newPos].isWhite())
          possible.insert(Move(position, newPos, PieceType::INVALID, board[newPos].getType(), Move::MoveType::MOVE, isWhite()));
    }
 }

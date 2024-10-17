@@ -54,7 +54,7 @@ public:
    Piece(const Position& pos, bool isWhite = true) : position(pos), fWhite(isWhite), nMoves(0), lastMove(0) {}
    Piece(int c, int r, bool isWhite = true) : position(Position(c, r)), fWhite(isWhite), nMoves(0), lastMove(0) {}
    Piece(const Piece& piece);
-   virtual ~Piece()                                   {}
+   virtual ~Piece() {}
    virtual const Piece& operator = (const Piece& rhs);
 
    // getters
@@ -226,5 +226,7 @@ public:
    void getMoves(set <Move>& moves, const Board& board) const { }
 };
 
-
-
+struct RelativePos {
+   int col;
+   int row;
+};
