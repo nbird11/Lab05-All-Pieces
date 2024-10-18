@@ -149,6 +149,9 @@ void TestQueen::getMoves_slideToEnd()
  **************************************/
 void TestQueen::getMoves_slideToBlock()
 {
+   assertUnit(NOT_YET_IMPLEMENTED);
+
+   // SETUP
    BoardEmpty board;
    Queen queen(7, 7, true /*white*/);
    queen.fWhite = false;  // black

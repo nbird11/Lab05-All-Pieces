@@ -55,5 +55,5 @@ void Queen::getMoves(set<Move>& possible, const Board& board) const
  ***************************************************/
 void Queen::display(ogstream* pgout) const
 {
-   pgout->drawQueen(position, fWhite);
+   pgout->drawQueen(position, !fWhite);
 }

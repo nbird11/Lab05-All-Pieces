@@ -38,13 +38,22 @@ using namespace std;
 void Board::reset(bool fFree)
 {
    // free everything
-   for (int r = 0; r < 8; r++)
-      for (int c = 0; c < 8; c++)
-         board[c][r] = nullptr;
-   board[1][0] = new Knight(1, 0, false);
-   board[6][0] = new Knight(6, 0, false);
-   board[1][7] = new Knight(1, 7, true);
-   board[6][7] = new Knight(6, 7, true);
+   if (fFree)
+      for (int r = 0; r < 8; r++)
+         for (int c = 0; c < 8; c++)
+         {
+            delete board[c][r];
+            board[c][r] = nullptr;
+         }
+   else
+      for (int r = 0; r < 8; r++)
+         for (int c = 0; c < 8; c++)
+            board[c][r] = nullptr;
+
+   board[1][0] = new Knight(1, 0, true);
+   board[6][0] = new Knight(6, 0, true);
+   board[1][7] = new Knight(1, 7, false);
+   board[6][7] = new Knight(6, 7, false);
 }
 
 // we really REALLY need to delete this.

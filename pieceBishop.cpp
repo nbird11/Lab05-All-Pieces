@@ -55,6 +55,6 @@ void Bishop::getMoves(set <Move>& possible, const Board& board) const
  ***************************************************/
 void Bishop::display(ogstream* pgout) const
 {
-   pgout->drawBishop(position, fWhite);
+   pgout->drawBishop(position, !fWhite);
 }
 

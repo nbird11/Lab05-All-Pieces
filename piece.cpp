@@ -51,7 +51,7 @@ bool Piece::operator!=(PieceType pt) const
 
 Move Piece::createNewMove(const Position& newPos, const Board& board) const
 {
-   return Move(position, newPos, PieceType::INVALID, board[newPos].getType(), Move::MoveType::MOVE, isWhite());
+   return Move(position, newPos, PieceType::INVALID, board[newPos].getType(), Move::MoveType::MOVE, fWhite);
 }
 
 void Piece::setLastMove(int currentMove)
