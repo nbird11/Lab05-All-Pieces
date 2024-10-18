@@ -2,7 +2,7 @@
  * Header File:
  *    Rook
  * Author:
-*    <your name here>
+*    Nathan Bird, Brock Hoskins, Jared Davey
  * Summary:
  *    The Rook class
  ************************************************************************/
@@ -28,6 +28,6 @@ public:
    Rook(int c, int r, bool isWhite) : Piece(c, r, isWhite) { }
    ~Rook() { }
    PieceType getType() const { return ROOK; }
-   void getMoves(set <Move>& moves, const Board& board) const override;
+   void getMoves(set <Move>& possible, const Board& board) const override;
    void display(ogstream* pgout) const override;
 };

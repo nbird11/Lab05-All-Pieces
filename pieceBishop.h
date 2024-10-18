@@ -2,7 +2,7 @@
  * Header File:
  *    Bishop
  * Author:
-*    <your name here>
+*    Nathan Bird, Brock Hoskins, Jared Davey
  * Summary:
  *    The BISHOP class
  ************************************************************************/
@@ -28,6 +28,6 @@ public:
    Bishop(int c, int r, bool isWhite) : Piece(c, r, isWhite) { }
    ~Bishop() { }
    PieceType getType() const { return BISHOP; }
-   void getMoves(set <Move>& moves, const Board& board) const override;
+   void getMoves(set <Move>& possible, const Board& board) const override;
    void display(ogstream* pgout) const override;
 };

@@ -185,7 +185,7 @@ void TestRook::getMoves_slideToBlock()
  **************************************/
 void TestRook::getMoves_slideToCapture()
 {
-     // SETUP
+   // SETUP
    BoardEmpty board;
    Rook rook(7, 7, true /*white*/);
    rook.fWhite = true;  // black
@@ -237,7 +237,7 @@ void TestRook::getMoves_slideToCapture()
  **************************************/
 void TestRook::getType()
 {
-      // SETUP
+   // SETUP
    Rook rook(7, 7, false /*isWhite*/);
    rook.fWhite = true;
    rook.position.set(3, 4);
@@ -250,4 +250,4 @@ void TestRook::getType()
    assertUnit(rook.fWhite == true);
    assertUnit(rook.position.getCol() == 3);
    assertUnit(rook.position.getRow() == 4);
-}
+}  // TEARDOWN

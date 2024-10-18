@@ -9,9 +9,10 @@
 
 #pragma once
 
-#include <string>
 #include <cassert>
 #include <cstdint>
+#include <iosfwd>
+#include <string>
 using std::string;
 using std::ostream;
 using std::istream;

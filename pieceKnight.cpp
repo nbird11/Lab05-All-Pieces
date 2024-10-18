@@ -2,7 +2,7 @@
  * Source File:
  *    KNIGHT
  * Author:
- *    <your name here>
+ *    Nathan Bird, Brock Hoskins, Jared Davey
  * Summary:
  *    The knight class
  ************************************************************************/
@@ -50,6 +50,6 @@ void Knight::getMoves(set <Move>& possible, const Board& board) const
       c = moves[i].getCol();
       if (0 <= r && r <= 7 && 0 <= c && c <= 7)
          if ((fWhite && !board[moves[i]].isWhite()) || board[moves[i]].getType() == SPACE)
-            possible.insert(Move(position, moves[i], PieceType::INVALID, board[moves[i]].getType(), Move::MoveType::MOVE, isWhite()));
+            possible.insert(createNewMove(moves[i], board));
    }
 }

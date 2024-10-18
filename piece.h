@@ -68,6 +68,8 @@ public:
    virtual const Position & getPosition()  const { return position;     }
    virtual bool justMoved(int currentMove) const { return lastMove == currentMove - 1; }
 
+   virtual Move createNewMove(const Position& newPos, const Board& board) const;
+
    // setter
    virtual void setLastMove(int currentMove);
 

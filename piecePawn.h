@@ -2,7 +2,7 @@
  * Header File:
  *    Pawn
  * Author:
-*    <your name here>
+*    Nathan Bird, Brock Hoskins, Jared Davey
  * Summary:
  *    The Pawn class
  ************************************************************************/

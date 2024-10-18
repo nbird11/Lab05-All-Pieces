@@ -2,7 +2,7 @@
  * Source File:
  *    Rook
  * Author:
- *    <your name here>
+ *    Nathan Bird, Brock Hoskins, Jared Davey
  * Summary:
  *    The Rook class
  ************************************************************************/
@@ -39,13 +39,13 @@ void Rook::getMoves(set <Move>& possible, const Board& board) const
       while (r >= 0 && r < 8 && c >= 0 && c < 8 &&
              board[newPos].getType() == PieceType::SPACE)
       {
-         possible.insert(Move(position, newPos, PieceType::INVALID, board[newPos].getType(), Move::MoveType::MOVE, isWhite()));
+         possible.insert(createNewMove(newPos, board));
          r += moves[i].row;
          c += moves[i].col;
          newPos = Position(c, r);
       }
-      if (fWhite && !board[newPos].isWhite())
-         possible.insert(Move(position, newPos, PieceType::INVALID, board[newPos].getType(), Move::MoveType::MOVE, isWhite()));
+      if (newPos.isValid() && fWhite && !board[newPos].isWhite())
+         possible.insert(createNewMove(newPos, board));
    }
 }
 
@@ -55,6 +55,6 @@ void Rook::getMoves(set <Move>& possible, const Board& board) const
  ***************************************************/
 void Rook::display(ogstream* pgout) const
 {
-   pgout->drawRook(position, isWhite());
+   pgout->drawRook(position, fWhite);
 }
 

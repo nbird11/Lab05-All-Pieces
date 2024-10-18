@@ -2,17 +2,19 @@
  * Source File:
  *    TEST QUEEN
  * Author:
- *    <your name here>
+ *    Brock Hoskins, Jared Davey, Nathan Bird
  * Summary:
  *    The unit tests for the queen
  ************************************************************************/
 
-#include "testQueen.h"
-#include "pieceQueen.h"     
+#include <set>
 #include "board.h"
-#include "uiDraw.h"
-#include <cassert>      
-
+#include "move.h"
+#include "piece.h"
+#include "pieceQueen.h"     
+#include "pieceType.h"
+#include "testQueen.h"
+#include "unitTest.h"
 
 
 
@@ -32,42 +34,46 @@
  **************************************/
 void TestQueen::getMoves_blocked()
 {
-   //      // SETUP
-   // BoardEmpty board;
-   // Queen queen(7, 7, true /*white*/);
-   // queen.fWhite = false;  // black
-   // queen.position.set(2, 1);
-   // board.board[2][1] = &queen;
-   // Black black1(PAWN);
-   // board.board[1][1] = &black1;
-   // Black black2(PAWN);
-   // board.board[2][2] = &black2;
-   // Black black3(PAWN);
-   // board.board[2][0] = &black3;
-   // Black black4(PAWN);
-   // board.board[3][1] = &black4;
-   // Black black5(PAWN);
-   // board.board[3][0] = &black5;
-   // Black black6(PAWN);
-   // board.board[1][0] = &black6;
-   // Black black7(PAWN);
-   // board.board[1][2] = &black7;
-   // Black black8(PAWN);
-   // board.board[3][2] = &black8;
-   // set <Move> moves;
+   // SETUP
+   BoardEmpty board;
+   Queen queen(7, 7, true /*white*/);
+   queen.fWhite = false;  // black
+   queen.position.set(2, 1);
+   board.board[2][1] = &queen;
+   Black black1(PAWN);
+   board.board[1][0] = &black1;
+   Black black2(PAWN);
+   board.board[2][0] = &black2;
+   Black black3(PAWN);
+   board.board[3][0] = &black3;
+   Black black4(PAWN);
+   board.board[1][1] = &black4;
+   Black black5(PAWN);
+   board.board[3][1] = &black5;
+   Black black6(PAWN);
+   board.board[1][2] = &black6;
+   Black black7(PAWN);
+   board.board[2][2] = &black7;
+   Black black8(PAWN);
+   board.board[3][2] = &black8;
+   set <Move> moves;
 
-   // // EXERCISE
-   // queen.getMoves(moves, board);
+   // EXERCISE
+   queen.getMoves(moves, board);
 
-   // // VERIFY
-   // assertUnit(moves.size() == 0);  // no possible moves
+   // VERIFY
+   assertUnit(moves.size() == 0);  // no possible moves
 
-   // // TEARDOWN
-   // board.board[2][1] = nullptr; // black
-   // board.board[1][1] = nullptr; // black1
-   // board.board[2][0] = nullptr; // black2
-   // board.board[3][1] = nullptr; // black3
-   // board.board[2][2] = nullptr; // black4
+   // TEARDOWN
+   board.board[2][1] = nullptr; // black
+   board.board[1][0] = nullptr; // black1
+   board.board[2][0] = nullptr; // black2
+   board.board[3][0] = nullptr; // black3
+   board.board[1][1] = nullptr; // black4
+   board.board[3][1] = nullptr;
+   board.board[1][2] = nullptr;
+   board.board[2][2] = nullptr;
+   board.board[3][2] = nullptr;
 }
 
 /*************************************
@@ -86,7 +92,45 @@ void TestQueen::getMoves_blocked()
  **************************************/
 void TestQueen::getMoves_slideToEnd()
 {
-   assertUnit(NOT_YET_IMPLEMENTED);
+   // SETUP
+   BoardEmpty board;
+   Queen queen(7, 7, true /*white*/);
+   queen.fWhite = false;  // black
+   queen.position.set(2, 1);
+   board.board[2][1] = &queen;
+   set <Move> moves;
+
+   // EXERCISE
+   queen.getMoves(moves, board);
+
+   // VERIFY
+   assertUnit(moves.size() == 23);  // many possible moves
+   assertUnit(moves.find(Move("c2b1")) != moves.end());
+   assertUnit(moves.find(Move("c2c1")) != moves.end());
+   assertUnit(moves.find(Move("c2d1")) != moves.end());
+   assertUnit(moves.find(Move("c2a2")) != moves.end());
+   assertUnit(moves.find(Move("c2b2")) != moves.end());
+   assertUnit(moves.find(Move("c2d2")) != moves.end());
+   assertUnit(moves.find(Move("c2e2")) != moves.end());
+   assertUnit(moves.find(Move("c2f2")) != moves.end());
+   assertUnit(moves.find(Move("c2g2")) != moves.end());
+   assertUnit(moves.find(Move("c2h2")) != moves.end());
+   assertUnit(moves.find(Move("c2b3")) != moves.end());
+   assertUnit(moves.find(Move("c2c3")) != moves.end());
+   assertUnit(moves.find(Move("c2d3")) != moves.end());
+   assertUnit(moves.find(Move("c2a4")) != moves.end());
+   assertUnit(moves.find(Move("c2c4")) != moves.end());
+   assertUnit(moves.find(Move("c2e4")) != moves.end());
+   assertUnit(moves.find(Move("c2c5")) != moves.end());
+   assertUnit(moves.find(Move("c2f5")) != moves.end());
+   assertUnit(moves.find(Move("c2c6")) != moves.end());
+   assertUnit(moves.find(Move("c2g6")) != moves.end());
+   assertUnit(moves.find(Move("c2c7")) != moves.end());
+   assertUnit(moves.find(Move("c2h7")) != moves.end());
+   assertUnit(moves.find(Move("c2c8")) != moves.end());
+
+   // TEARDOWN
+   board.board[2][1] = nullptr; // black
 }
 
 /*************************************
@@ -105,7 +149,46 @@ void TestQueen::getMoves_slideToEnd()
  **************************************/
 void TestQueen::getMoves_slideToBlock()
 {
-   assertUnit(NOT_YET_IMPLEMENTED);
+   BoardEmpty board;
+   Queen queen(7, 7, true /*white*/);
+   queen.fWhite = false;  // black
+   queen.position.set(2, 1);
+   board.board[2][1] = &queen;
+   // TODO: add all black pawns
+   set <Move> moves;
+
+   // EXERCISE
+   queen.getMoves(moves, board);
+
+   // VERIFY
+   assertUnit(moves.size() == 15);  // many possible moves
+   //assertUnit(moves.find(Move("c2b1")) != moves.end());
+   //assertUnit(moves.find(Move("c2c1")) != moves.end());
+   //assertUnit(moves.find(Move("c2d1")) != moves.end());
+   //assertUnit(moves.find(Move("c2a2")) != moves.end());
+   //assertUnit(moves.find(Move("c2b2")) != moves.end());
+   //assertUnit(moves.find(Move("c2d2")) != moves.end());
+   //assertUnit(moves.find(Move("c2e2")) != moves.end());
+   //assertUnit(moves.find(Move("c2f2")) != moves.end());
+   //assertUnit(moves.find(Move("c2g2")) != moves.end());
+   //assertUnit(moves.find(Move("c2h2")) != moves.end());
+   //assertUnit(moves.find(Move("c2b3")) != moves.end());
+   //assertUnit(moves.find(Move("c2c3")) != moves.end());
+   //assertUnit(moves.find(Move("c2d3")) != moves.end());
+   //assertUnit(moves.find(Move("c2a4")) != moves.end());
+   //assertUnit(moves.find(Move("c2c4")) != moves.end());
+   //assertUnit(moves.find(Move("c2e4")) != moves.end());
+   //assertUnit(moves.find(Move("c2c5")) != moves.end());
+   //assertUnit(moves.find(Move("c2f5")) != moves.end());
+   //assertUnit(moves.find(Move("c2c6")) != moves.end());
+   //assertUnit(moves.find(Move("c2g6")) != moves.end());
+   //assertUnit(moves.find(Move("c2c7")) != moves.end());
+   //assertUnit(moves.find(Move("c2h7")) != moves.end());
+   //assertUnit(moves.find(Move("c2c8")) != moves.end());
+
+   // TEARDOWN
+   board.board[2][1] = nullptr; // black
+   //...
 }
 
 /*************************************
@@ -135,5 +218,17 @@ void TestQueen::getMoves_slideToCapture()
  **************************************/
 void TestQueen::getType()
 {
-   assertUnit(NOT_YET_IMPLEMENTED);
-}
+   // SETUP
+   Queen queen(7, 7, false /*isWhite*/);
+   queen.fWhite = true;
+   queen.position.set(3, 4);
+
+   // EXERCISE
+   PieceType pt = queen.getType();
+
+   // VERIFY
+   assertUnit(pt == PieceType::QUEEN);
+   assertUnit(queen.fWhite == true);
+   assertUnit(queen.position.getCol() == 3);
+   assertUnit(queen.position.getRow() == 4);
+}  // TEARDOWN

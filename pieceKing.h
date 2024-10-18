@@ -2,7 +2,7 @@
  * Header File:
  *    King
  * Author:
-*    <your name here>
+*    Nathan Bird, Brock Hoskins, Jared Davey
  * Summary:
  *    The King class
  ************************************************************************/
