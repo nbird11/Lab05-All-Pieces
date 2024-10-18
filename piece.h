@@ -10,12 +10,11 @@
 
 #pragma once
 
-#include <set>         // for SET to return a set of possible moves
-#include <list>        // for the move-type,list
-#include <cassert>
-#include "position.h"  // Because Position is a member variable
 #include "move.h"      // Because we return a set of Move
 #include "pieceType.h" // A piece type.
+#include "position.h"  // Because Position is a member variable
+#include <cassert>
+#include <set>         // for SET to return a set of possible moves
 using std::set;
 
 // forward declaration because one of the Piece methods takes a Board

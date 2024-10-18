@@ -8,14 +8,12 @@
  *       SPACE, KING, QUEEN, ROOK, KNIGHT, BISHOP, PAWN
  ************************************************************************/
 
-#include <cassert>     // because we are paranoid
 #include "board.h"     // for BOARD
 #include "move.h"
 #include "piece.h"     // for all the PIECE class definitions
-#include "pieceKnight.h"
-#include "pieceSpace.h"
+#include "pieceType.h"
 #include "position.h"  // for POSITION
-#include "uiDraw.h"    // for draw*()
+#include <set>
 using namespace std;
 
 

@@ -7,8 +7,6 @@
  *    The King class
  ************************************************************************/
 
-#include <cassert>
-#include <set>
 #include "board.h"
 #include "move.h"
 #include "piece.h"
@@ -16,6 +14,8 @@
 #include "pieceType.h"
 #include "position.h"
 #include "uiDraw.h"
+#include <cassert>
+#include <set>
 
  /**********************************************
   * KING : GET POSITIONS
