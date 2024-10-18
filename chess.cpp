@@ -8,16 +8,10 @@
 ************************************************************************/
 
 
-#include "uiInteract.h"   // for Interface
-#include "uiDraw.h"       // for OGSTREAM
-#include "position.h"     // for POSITION
-#include "piece.h"        // for PIECE and compan
 #include "board.h"        // for BOARD
 #include "test.h"
-#include <set>            // for STD::SET
-#include <cassert>        // for ASSERT
-#include <fstream>        // for IFSTREAM
-#include <string>         // for STRING
+#include "uiDraw.h"       // for OGSTREAM
+#include "uiInteract.h"   // for Interface
 using namespace std;
 
 
@@ -42,6 +36,7 @@ void callBack(Interface *pUI, void * p)
  *********************************/
 #ifdef _WIN32
 #include <windows.h>
+#include <sal.h>
 int WINAPI WinMain(
    _In_ HINSTANCE hInstance,
    _In_opt_ HINSTANCE hPrevInstance,

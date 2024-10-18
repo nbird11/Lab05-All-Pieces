@@ -7,10 +7,18 @@
  *    The Bishop class
  ************************************************************************/
 
-#include "pieceBishop.h"
+#include <set>
 #include "board.h"
+#include "move.h"
+#include "piece.h"
+#include "pieceBishop.h"
+#include "pieceType.h"
+#include "position.h"
 #include "uiDraw.h"    // for draw*()
 
+ /**********************************************
+  * BISHOP : GET POSITIONS
+  *********************************************/
 void Bishop::getMoves(set <Move>& possible, const Board& board) const
 {
    int row = position.getRow();
@@ -29,7 +37,7 @@ void Bishop::getMoves(set <Move>& possible, const Board& board) const
       Position newPos(c, r);
 
       while (r >= 0 && r < 8 && c >= 0 && c < 8 &&
-             board[newPos].getType() == SPACE)
+             board[newPos].getType() == PieceType::SPACE)
       {
          possible.insert(Move(position, newPos, PieceType::INVALID, board[newPos].getType(), Move::MoveType::MOVE, isWhite()));
          r += moves[i].row;
@@ -42,9 +50,9 @@ void Bishop::getMoves(set <Move>& possible, const Board& board) const
 }
 
 /***************************************************
-* PIECE DRAW
-* Draw all the pieces.
-***************************************************/
+ * BISHOP : DRAW
+ * Draw the bishop.
+ ***************************************************/
 void Bishop::display(ogstream* pgout) const
 {
    pgout->drawBishop(position, fWhite);

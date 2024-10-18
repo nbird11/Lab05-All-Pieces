@@ -7,13 +7,16 @@
  *    The knight class
  ************************************************************************/
 
-#include "pieceKnight.h"
+#include <set>
 #include "board.h"
+#include "move.h"
+#include "pieceKnight.h"
+#include "pieceType.h"
 #include "uiDraw.h"    // for draw*()
 
- /***************************************************
- * PIECE DRAW
- * Draw all the pieces.
+/***************************************************
+ * KNIGHT : Draw
+ * Draw the knight.
  ***************************************************/
 void Knight::display(ogstream* pgout) const
 {

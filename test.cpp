@@ -55,13 +55,13 @@ void testRunner()
    // unit tests
    PositionTest().run();
    TestMove().run();
-   //TestBoard().run();  // Ticket 6-7
+   //TestBoard().run();   // Ticket 6-7
    TestPiece().run();
    TestSpace().run();
    TestKnight().run();
-   TestBishop().run();   // ~Ticket 1~
-   //TestRook().run();   // Ticket 2
-   //TestQueen().run();  // Ticket 3
-   //TestKing().run();   // Ticket 4
-   //TestPawn().run();   // Ticket 5
+   TestBishop().run();  // ~Ticket 1~
+   TestRook().run();    // Ticket 2
+   //TestQueen().run();   // Ticket 3
+   //TestKing().run();    // Ticket 4
+   //TestPawn().run();    // Ticket 5
 }

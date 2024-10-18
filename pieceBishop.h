@@ -9,7 +9,13 @@
 
 #pragma once
 
+#include <set>
+#include "board.h"
+#include "move.h"
 #include "piece.h"
+#include "pieceType.h"
+#include "position.h"
+#include "uiDraw.h"
 
 /***************************************************
  * Bishop

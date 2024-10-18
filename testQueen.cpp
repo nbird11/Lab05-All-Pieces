@@ -32,7 +32,42 @@
  **************************************/
 void TestQueen::getMoves_blocked()
 {
-   assertUnit(NOT_YET_IMPLEMENTED);
+   //      // SETUP
+   // BoardEmpty board;
+   // Queen queen(7, 7, true /*white*/);
+   // queen.fWhite = false;  // black
+   // queen.position.set(2, 1);
+   // board.board[2][1] = &queen;
+   // Black black1(PAWN);
+   // board.board[1][1] = &black1;
+   // Black black2(PAWN);
+   // board.board[2][2] = &black2;
+   // Black black3(PAWN);
+   // board.board[2][0] = &black3;
+   // Black black4(PAWN);
+   // board.board[3][1] = &black4;
+   // Black black5(PAWN);
+   // board.board[3][0] = &black5;
+   // Black black6(PAWN);
+   // board.board[1][0] = &black6;
+   // Black black7(PAWN);
+   // board.board[1][2] = &black7;
+   // Black black8(PAWN);
+   // board.board[3][2] = &black8;
+   // set <Move> moves;
+
+   // // EXERCISE
+   // queen.getMoves(moves, board);
+
+   // // VERIFY
+   // assertUnit(moves.size() == 0);  // no possible moves
+
+   // // TEARDOWN
+   // board.board[2][1] = nullptr; // black
+   // board.board[1][1] = nullptr; // black1
+   // board.board[2][0] = nullptr; // black2
+   // board.board[3][1] = nullptr; // black3
+   // board.board[2][2] = nullptr; // black4
 }
 
 /*************************************
