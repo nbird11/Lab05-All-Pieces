@@ -36,7 +36,7 @@ void TestQueen::getMoves_blocked()
 {
    // SETUP
    BoardEmpty board;
-   Queen queen(7, 7, true /*white*/);
+   Queen queen(7, 7, true /*fWhite*/);
    queen.fWhite = false;  // black
    queen.position.set(2, 1);
    board.board[2][1] = &queen;
@@ -94,7 +94,7 @@ void TestQueen::getMoves_slideToEnd()
 {
    // SETUP
    BoardEmpty board;
-   Queen queen(7, 7, true /*white*/);
+   Queen queen(7, 7, true /*fWhite*/);
    queen.fWhite = false;  // black
    queen.position.set(2, 1);
    board.board[2][1] = &queen;
@@ -153,7 +153,7 @@ void TestQueen::getMoves_slideToBlock()
 
    // SETUP
    BoardEmpty board;
-   Queen queen(7, 7, true /*white*/);
+   Queen queen(7, 7, true /*fWhite*/);
    queen.fWhite = false;  // black
    queen.position.set(2, 1);
    board.board[2][1] = &queen;
@@ -222,7 +222,7 @@ void TestQueen::getMoves_slideToCapture()
 void TestQueen::getType()
 {
    // SETUP
-   Queen queen(7, 7, false /*isWhite*/);
+   Queen queen(7, 7, false /*fWhite*/);
    queen.fWhite = true;
    queen.position.set(3, 4);
 

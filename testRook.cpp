@@ -35,7 +35,7 @@ void TestRook::getMoves_blocked()
 {
        // SETUP
    BoardEmpty board;
-   Rook rook(7, 7, true /*white*/);
+   Rook rook(7, 7, true /*fWhite*/);
    rook.fWhite = false;  // black
    rook.position.set(2, 1);
    board.board[2][1] = &rook;
@@ -82,7 +82,7 @@ void TestRook::getMoves_slideToEnd()
 {
           // SETUP
    BoardEmpty board;
-   Rook rook(7, 7, true /*white*/);
+   Rook rook(7, 7, true /*fWhite*/);
    rook.fWhite = false;  // black
    rook.position.set(2, 1);
    board.board[2][1] = &rook;
@@ -131,7 +131,7 @@ void TestRook::getMoves_slideToBlock()
 {
    // SETUP
    BoardEmpty board;
-   Rook rook(7, 7, true /*white*/);
+   Rook rook(7, 7, true /*fWhite*/);
    rook.fWhite = false;  // black
    rook.position.set(2, 1);
    board.board[2][1] = &rook;
@@ -187,7 +187,7 @@ void TestRook::getMoves_slideToCapture()
 {
    // SETUP
    BoardEmpty board;
-   Rook rook(7, 7, true /*white*/);
+   Rook rook(7, 7, true /*fWhite*/);
    rook.fWhite = true;  // black
    rook.position.set(2, 1);
    board.board[2][1] = &rook;
@@ -238,7 +238,7 @@ void TestRook::getMoves_slideToCapture()
 void TestRook::getType()
 {
    // SETUP
-   Rook rook(7, 7, false /*isWhite*/);
+   Rook rook(7, 7, false /*fWhite*/);
    rook.fWhite = true;
    rook.position.set(3, 4);
 

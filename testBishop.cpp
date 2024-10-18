@@ -35,7 +35,7 @@ void TestBishop::getMoves_blocked()
 {
     // SETUP
    BoardEmpty board;
-   Bishop bishop(7, 7, true /*white*/);
+   Bishop bishop(7, 7, true /*fWhite*/);
    bishop.fWhite = false;  // black
    bishop.position.set(2, 1);
    board.board[2][1] = &bishop;
@@ -81,7 +81,7 @@ void TestBishop::getMoves_slideToEnd()
 {
    // SETUP
    BoardEmpty board;
-   Bishop bishop(7, 7, true /*white*/);
+   Bishop bishop(7, 7, true /*fWhite*/);
    bishop.fWhite = false;  // black
    bishop.position.set(2, 1);
    board.board[2][1] = &bishop;
@@ -125,7 +125,7 @@ void TestBishop::getMoves_slideToBlock()
 {
           // SETUP
    BoardEmpty board;
-   Bishop bishop(7, 7, true /*white*/);
+   Bishop bishop(7, 7, true /*fWhite*/);
    bishop.fWhite = false;  // black
    bishop.position.set(2, 1);
    board.board[2][1] = &bishop;

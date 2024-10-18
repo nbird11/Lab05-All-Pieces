@@ -34,7 +34,7 @@ void TestKnight::getMoves_end()
 {
    // SETUP
    BoardEmpty board;
-   Knight knight(7, 7, false /*white*/);
+   Knight knight(7, 7, false /*fWhite*/);
    knight.fWhite = true;
    knight.position.set(6, 0);
    board.board[6][0] = &knight;
@@ -76,7 +76,7 @@ void TestKnight::getMoves_blocked()
 {
    // SETUP
    BoardEmpty board;
-   Knight knight(7, 7, true /*white*/);
+   Knight knight(7, 7, true /*fWhite*/);
    knight.fWhite = false;  // black
    knight.position.set(3, 4);
    board.board[3][4] = &knight;
@@ -135,7 +135,7 @@ void TestKnight::getMoves_capture()
 {
    // SETUP
    BoardEmpty board;
-   Knight knight(7, 7, false /*white*/);
+   Knight knight(7, 7, false /*fWhite*/);
    knight.fWhite = true;
    knight.position.set(3, 4);
    board.board[3][4] = &knight;
@@ -202,7 +202,7 @@ void TestKnight::getMoves_free()
 {
    // SETUP
    BoardEmpty board;
-   Knight knight(7, 7, false /*white*/);
+   Knight knight(7, 7, false /*fWhite*/);
    knight.fWhite = true;
    knight.position.set(3, 4);
    board.board[3][4] = &knight;
