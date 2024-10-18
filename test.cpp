@@ -63,5 +63,5 @@ void testRunner()
    TestRook().run();    // ~Ticket 2~
    TestQueen().run();   // Ticket 3
    TestKing().run();    // Ticket 4
-   //TestPawn().run();    // Ticket 5
+   TestPawn().run();    // Ticket 5
 }

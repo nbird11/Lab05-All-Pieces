@@ -7,11 +7,12 @@
  *    The unit tests for the pawn
  ************************************************************************/
 
-#include "testPawn.h"
-#include "piecePawn.h"     
 #include "board.h"
-#include "uiDraw.h"
-#include <cassert>      
+#include "move.h"
+#include "piecePawn.h"
+#include "testPawn.h"
+#include "unitTest.h"
+#include <set>
 
 
 
@@ -34,7 +35,23 @@
   **************************************/
 void TestPawn::getMoves_simpleWhite()
 {
-   assertUnit(NOT_YET_IMPLEMENTED);
+   // SETUP
+   BoardEmpty board;
+   Pawn pawn(7, 7, false /*fWhite*/);
+   pawn.position.set(1, 3);
+   pawn.fWhite = true;
+   board.board[1][3] = &pawn;
+   set <Move> moves;
+
+   // EXERCISE
+   pawn.getMoves(moves, board);
+
+   // VERIFY
+   assertUnit(moves.size() == 1);
+   assertUnit(moves.find(Move("b4b5")) != moves.end());
+
+   // TEARDOWN
+   board.board[1][3] = nullptr;
 }
 
 /*************************************

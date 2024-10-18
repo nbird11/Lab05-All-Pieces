@@ -28,6 +28,6 @@ public:
    Pawn(int c, int r, bool isWhite) : Piece(c, r, isWhite) { }
    ~Pawn() { }
    PieceType getType() const { return PAWN; }
-   void getMoves(set <Move>& moves, const Board& board) const override;
+   void getMoves(set <Move>& possible, const Board& board) const override;
    void display(ogstream* pgout) const override;
 };
