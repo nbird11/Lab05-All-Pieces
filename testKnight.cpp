@@ -7,11 +7,14 @@
  *    The unit tests for the knight
  ************************************************************************/
 
-#include "testKnight.h"
-#include "pieceKnight.h"     
+#include <set>
 #include "board.h"
-#include "uiDraw.h"
-#include <cassert>      
+#include "move.h"
+#include "piece.h"
+#include "pieceKnight.h"     
+#include "pieceType.h"
+#include "testKnight.h"
+#include "unitTest.h"
 
  /*************************************
   * +---a-b-c-d-e-f-g-h---+
