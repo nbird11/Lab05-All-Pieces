@@ -12,6 +12,7 @@
 #include "board.h"
 #include "move.h"
 #include "piece.h"
+#include "piecePawn.h"
 #include "pieceType.h"
 #include "position.h"
 #include "uiDraw.h"
@@ -26,6 +27,7 @@ class Queen : public Piece
 public:
    Queen(const Position& pos, bool isWhite) : Piece(pos, isWhite) { }
    Queen(int c, int r, bool isWhite) : Piece(c, r, isWhite) { }
+   Queen(const Pawn& pawn) : Piece(pawn) { }
    ~Queen() { }
    PieceType getType() const { return QUEEN; }
    void getMoves(set <Move>& possible, const Board& board) const override;

@@ -40,8 +40,7 @@ class Board
    friend TestBoard;
 
 public:
-   // constructors
-   //Board();
+   // constructor and destuctor
    // create and destroy the board
    Board(ogstream* pgout = nullptr, bool noreset = false);
    virtual ~Board() { free(); }

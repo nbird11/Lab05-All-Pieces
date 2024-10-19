@@ -10,6 +10,7 @@
 #include "board.h"
 #include "move.h"
 #include "piece.h"
+#include "piecePawn.h"
 #include "pieceQueen.h"
 #include "pieceType.h"
 #include "position.h"
