@@ -121,7 +121,7 @@ void Board::free()
    {
       for (int row = 0; row < 8; row++)
       {
-         delete board[col][row];
+         //delete board[col][row];
          board[col][row] = nullptr;
       }
    }
@@ -165,7 +165,7 @@ void Board::move(const Move& move)
  * It does not even have spaces though each non-filled
  * spot will report it has a space. This is for unit testing
  *********************************************/
-BoardEmpty::BoardEmpty() : BoardDummy(), pSpace(nullptr), moveNumber(0)
+BoardEmpty::BoardEmpty() : BoardDummy(), pSpace(nullptr)
 {
    pSpace = new Space(0, 0);
 }

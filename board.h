@@ -110,7 +110,6 @@ class BoardEmpty : public BoardDummy
    friend TestBoard;
 public:
    Piece * pSpace;
-   int moveNumber;
 
    BoardEmpty();
    ~BoardEmpty();
@@ -122,8 +121,8 @@ public:
       else
          return *pSpace;
    }
-   int  getCurrentMove() const {
-      return moveNumber;
+   int getCurrentMove() const {
+      return numMoves;
    }
 };
 

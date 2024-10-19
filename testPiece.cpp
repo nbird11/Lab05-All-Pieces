@@ -8,11 +8,11 @@
  ************************************************************************/
 
 
-#include "testPiece.h"
 #include "piece.h"     
-#include "board.h"
-#include "uiDraw.h"
-#include <cassert>      
+#include "pieceType.h"
+#include "position.h"
+#include "testPiece.h"
+#include "unitTest.h"
 
 
  /*************************************

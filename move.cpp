@@ -9,10 +9,11 @@
 
 #include "move.h"
 #include "pieceType.h"
+#include <bitset>
 #include <cassert>
+#include <cctype>
 #include <iostream>
 #include <sstream>
-#include <bitset>
 
 using namespace std;
 
@@ -79,7 +80,7 @@ char Move::letterFromPieceType(PieceType pt) const
    switch (pt)
    {
    case PieceType::SPACE:
-      return ' ';
+      return '\0';
    case PieceType::PAWN:
       return 'p';
    case PieceType::BISHOP:
@@ -102,16 +103,22 @@ PieceType Move::pieceTypeFromLetter(char letter) const
    switch (letter)
    {
    case 'p':
+   case 'P':
       return PieceType::PAWN;
    case 'b':
+   case 'B':
       return PieceType::BISHOP;
    case 'n':
+   case 'N':
       return PieceType::KNIGHT;
    case 'r':
+   case 'R':
       return PieceType::ROOK;
    case 'q':
+   case 'Q':
       return PieceType::QUEEN;
    case 'k':
+   case 'K':
       return PieceType::KING;
    }
 
@@ -151,8 +158,12 @@ void Move::read(const string& text)
       }
       else
       {
-         // if (character == 'Q')
-         //    moveType = MoveType::PROMOTION;
+         if (character == 'Q')
+         {
+            moveType = MoveType::MOVE;
+            promote = PieceType::QUEEN;
+         }
+           
          if (character == 'E')
             moveType = MoveType::ENPASSANT;
          if (character == 'C')
@@ -180,8 +191,8 @@ string Move::getText() const
       returnText += 'E';
 
    // Promoted?
-   // if (this->moveType == PROMOTED)
-   //    returnText += 'Q';
+   if (promote != PieceType::INVALID)
+      returnText += toupper(letterFromPieceType(promote));
 
    // Castled?
    if (moveType == MoveType::CASTLE_KING)

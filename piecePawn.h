@@ -30,4 +30,7 @@ public:
    PieceType getType() const { return PAWN; }
    void getMoves(set <Move>& possible, const Board& board) const override;
    void display(ogstream* pgout) const override;
+private:
+   Move createNewEnPassantMove(const Position& newPos, const Board& board) const;
+   Move createNewPromoteMove(const Position& newPos, const Board& board)   const;
 };

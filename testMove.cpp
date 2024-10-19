@@ -363,7 +363,7 @@ void TestMove::letterFromPieceType_space()
    char letter = move.letterFromPieceType(PieceType::SPACE);
 
    // VERIFY
-   assertUnit(letter == ' ');
+   assertUnit(letter == '\0');
 
 }  // TEARDOWN
 

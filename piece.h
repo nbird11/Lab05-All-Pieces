@@ -62,6 +62,7 @@ public:
    virtual bool isWhite()                  const { return fWhite;       }
    virtual bool isMoved()                  const { return nMoves != 0;  }
    virtual int  getNMoves()                const { return nMoves;       }
+   virtual int  getLastMove()              const { return lastMove;     }
    virtual void decrementNMoves()                { nMoves--;            }
    virtual void incrementNMoves()                { nMoves++;            }
    virtual const Position & getPosition()  const { return position;     }
@@ -240,9 +241,10 @@ public:
 class Black : public PieceDummy
 {
    PieceType pt;
+   bool fWhite;
 public:
-   Black() : PieceDummy(), pt(ROOK) {}
-   Black(PieceType pt) : PieceDummy(), pt(pt) {}
+   Black() : PieceDummy(), pt(ROOK), fWhite(false) {}
+   Black(PieceType pt) : PieceDummy(), pt(pt), fWhite(false) {}
    bool isWhite() const { return false; }
    PieceType getType() const { return pt; }
    void getMoves(set <Move>& moves, const Board& board) const { }
@@ -254,7 +256,7 @@ class BlackNotMoved : public PieceDummy
 public:
    BlackNotMoved() : PieceDummy(), pt(ROOK) {}
    BlackNotMoved(PieceType pt) : PieceDummy(), pt(pt) {}
-   bool isWhite() const { return true; }
+   bool isWhite() const { return false; }
    PieceType getType() const { return pt; }
    int getNMoves() const { return 0; }
    void getMoves(set <Move>& moves, const Board& board) const { }
@@ -278,7 +280,7 @@ class BlackMoved : public PieceDummy
 public:
    BlackMoved() : PieceDummy(), pt(ROOK) {}
    BlackMoved(PieceType pt) : PieceDummy(), pt(pt) {}
-   bool isWhite() const { return true; }
+   bool isWhite() const { return false; }
    PieceType getType() const { return pt; }
    int getNMoves() const { return 1; }
    void getMoves(set <Move>& moves, const Board& board) const { }
