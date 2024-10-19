@@ -9,8 +9,8 @@
 
 #pragma once
 
-#include <cassert>
 #include "move.h"   // Because we return a set of Move
+#include <cassert>
 
 class ogstream;
 class TestPawn;

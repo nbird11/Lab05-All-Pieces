@@ -7,7 +7,6 @@
  *    The unit tests for the queen
  ************************************************************************/
 
-#include <set>
 #include "board.h"
 #include "move.h"
 #include "piece.h"
@@ -15,6 +14,7 @@
 #include "pieceType.h"
 #include "testQueen.h"
 #include "unitTest.h"
+#include <set>
 
 
 
