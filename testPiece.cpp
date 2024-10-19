@@ -2,7 +2,7 @@
  * Source File:
  *    TEST PIECE
  * Author:
- *    <your name here>
+ *    Nathan Bird, Jared Davey, Brock Hoskins
  * Summary:
  *    The unit tests for a piece base class
  ************************************************************************/

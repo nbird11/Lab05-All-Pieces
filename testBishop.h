@@ -2,7 +2,7 @@
  * Header File:
  *    TEST BISHOP
  * Author:
- *    <your name here>
+ *    Nathan Bird, Jared Davey, Brock Hoskins
  * Summary:
  *    The unit tests for the bishop
  ************************************************************************/

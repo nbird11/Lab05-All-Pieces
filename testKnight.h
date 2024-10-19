@@ -2,7 +2,7 @@
  * Header File:
  *    TEST KNIGHT
  * Author:
- *    <your name here>
+ *    Nathan Bird, Jared Davey, Brock Hoskins
  * Summary:
  *    The unit tests for Knight
  ************************************************************************/

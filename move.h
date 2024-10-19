@@ -2,7 +2,7 @@
  * Header File:
  *    MOVE 
  * Author:
- *    <your name here>
+ *    Nathan Bird, Jared Davey, Brock Hoskins
  * Summary:
  *    Everything we need to know about a single chess move
  ************************************************************************/

@@ -2,7 +2,7 @@
 * Source File:
 *    Lab 04: Chess
 * Author:
-*    <your name here>
+*    Nathan Bird, Jared Davey, Brock Hoskins
 * Summary:
 *    Play the game of chess
 ************************************************************************/
