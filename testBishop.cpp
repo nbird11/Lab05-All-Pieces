@@ -123,7 +123,7 @@ void TestBishop::getMoves_slideToEnd()
  **************************************/
 void TestBishop::getMoves_slideToBlock()
 {
-          // SETUP
+   // SETUP
    BoardEmpty board;
    Bishop bishop(7, 7, true /*fWhite*/);
    bishop.fWhite = false;  // black

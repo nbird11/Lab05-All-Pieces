@@ -44,7 +44,7 @@ void Bishop::getMoves(set <Move>& possible, const Board& board) const
          c += moves[i].col;
          newPos = Position(c, r);
       }
-      if (newPos.isValid() && fWhite && !board[newPos].isWhite())
+      if (newPos.isValid() && fWhite != board[newPos].isWhite())
          possible.insert(createNewMove(newPos, board));
    }
 }

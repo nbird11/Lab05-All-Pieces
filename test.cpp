@@ -61,7 +61,7 @@ void testRunner()
    TestKnight().run();
    TestBishop().run();  // ~Ticket 1~
    TestRook().run();    // ~Ticket 2~
-   TestQueen().run();   // Ticket 3
+   TestQueen().run();   // ~Ticket 3~
    TestKing().run();    // Ticket 4
    TestPawn().run();    // Ticket 5
 }
